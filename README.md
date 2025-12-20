@@ -64,6 +64,9 @@ Build your interaction abilities rapidly with useful functions to save you time.
 
 ## Changelog
 
+### 1.2.5
+* Fixed graspable static and skeletal meshes defaulting to hidden in game
+
 ### 1.2.4
 * Add optional InputTag to pass along with ability spec on activation
 	* Resolves Lyra tag-based input systems and "wait for input" tasks

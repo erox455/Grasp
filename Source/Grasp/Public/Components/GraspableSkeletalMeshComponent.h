@@ -71,7 +71,5 @@ public:
 		CanCharacterStepUpOn = ECB_No;
 		bCanEverAffectNavigation = false;
 		bAutoActivate = false;
-
-		SetHiddenInGame(true);
 	}
 };
