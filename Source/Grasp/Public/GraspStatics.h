@@ -367,6 +367,15 @@ public:
 
 public:
 	/**
+	 * Get the normalized distance between interact and highlight distances
+	 * @param GraspData The grasp data
+	 * @param NormalizedHighlightDistance The normalized highlight distance
+	 * @return The normalized distance between interact and highlight distances
+	 */
+	UFUNCTION(BlueprintPure, Category=Grasp)
+	static float GetNormalizedDistanceBetweenInteractAndHighlight(const UGraspData* GraspData, float NormalizedHighlightDistance);
+	
+	/**
 	 * Get the screen position of the graspable component
 	 * UI Helper to place a widget over the interactable
 	 * @param GraspableComponent The graspable component

@@ -64,6 +64,9 @@ Build your interaction abilities rapidly with useful functions to save you time.
 
 ## Changelog
 
+### 1.2.6
+* Add UI helper function `UGraspStatics::GetNormalizedDistanceBetweenInteractAndHighlight()`
+
 ### 1.2.5
 * Fixed graspable static and skeletal meshes defaulting to hidden in game
 

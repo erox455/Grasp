@@ -25,6 +25,7 @@
 #include "Blueprint/SlateBlueprintLibrary.h"
 #include "Components/Widget.h"
 #include "Kismet/GameplayStatics.h"
+#include "Kismet/KismetMathLibrary.h"
 
 #include UE_INLINE_GENERATED_CPP_BY_NAME(GraspStatics)
 
@@ -1115,6 +1116,17 @@ bool UGraspStatics::CanInteractWithHeight(const AActor* Interactor, const UPrimi
 		Data->MaxHeightBelow * AuthNetToleranceDistanceScalar : Data->MaxHeightBelow;
 
 	return IsInteractableWithinHeight(Location, InteractorLocation, MaxHeightAbove, MaxHeightBelow);
+}
+
+float UGraspStatics::GetNormalizedDistanceBetweenInteractAndHighlight(const UGraspData* GraspData,
+	float NormalizedHighlightDistance)
+{
+	if (GraspData->MaxHighlightDistance <= 0.f)
+	{
+		return 0.f;
+	}
+	const float Divisor = GraspData->MaxGraspDistance / GraspData->MaxHighlightDistance;
+	return UKismetMathLibrary::MapRangeClamped(NormalizedHighlightDistance, Divisor, 1.f, 0.f, 1.f);
 }
 
 FVector2D UGraspStatics::GetScreenPositionForGraspableComponent(const UPrimitiveComponent* GraspableComponent,
